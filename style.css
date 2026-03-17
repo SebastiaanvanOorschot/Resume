@@ -1,0 +1,406 @@
+/* ── Reset & Variables ─────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:        #0e1117;
+  --ink-soft:   #3a3f4a;
+  --ink-faint:  #7a8091;
+  --paper:      #f5f2ed;
+  --paper-dark: #ece9e2;
+  --accent:     #1a5c3a;
+  --accent-lt:  #2a8c5a;
+  --accent-pale:#d4eadd;
+  --rule:       #d0ccc4;
+  --white:      #ffffff;
+
+  --f-display: 'Playfair Display', Georgia, serif;
+  --f-body:    'DM Sans', sans-serif;
+  --f-mono:    'JetBrains Mono', monospace;
+}
+
+html { font-size: 16px; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-weight: 300;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── Export Button ─────────────────────────────────── */
+.export-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.6rem 2rem;
+  gap: 1rem;
+}
+.export-bar span {
+  color: var(--ink-faint);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.btn-export {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--accent);
+  color: var(--white);
+  border: none;
+  padding: 0.45rem 1.2rem;
+  border-radius: 2px;
+  font-family: var(--f-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-export:hover { background: var(--accent-lt); }
+.btn-export svg { width: 14px; height: 14px; }
+
+/* ── Page wrapper ──────────────────────────────────── */
+.page {
+  margin-top: 44px; /* offset for export bar */
+  max-width: 1060px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.5rem 4rem;
+}
+
+/* ── Header / Hero ─────────────────────────────────── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 2rem;
+  padding: 3.5rem 0 2rem;
+  border-bottom: 3px solid var(--ink);
+}
+.hero-name {
+  font-family: var(--f-display);
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.hero-name em {
+  display: block;
+  font-style: normal;
+  color: var(--accent);
+}
+.hero-title {
+  font-family: var(--f-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin-top: 0.6rem;
+}
+.hero-contact {
+  text-align: right;
+}
+.hero-contact a,
+.hero-contact span {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  line-height: 1.8;
+}
+.hero-contact a:hover { color: var(--accent); }
+
+/* ── Two-column body ───────────────────────────────── */
+.body-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 0;
+  margin-top: 0;
+}
+
+/* ── Sidebar ───────────────────────────────────────── */
+.sidebar {
+  padding: 2.5rem 2rem 2rem 0;
+  border-right: 1px solid var(--rule);
+}
+.sidebar-section { margin-bottom: 2.4rem; }
+.sidebar-section:last-child { margin-bottom: 0; }
+.sidebar-stack { margin-top: 3rem; }
+.sidebar-label {
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.sidebar-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--accent-pale);
+}
+
+.about-text {
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+/* Skills */
+.skill-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--paper-dark);
+}
+.skill-name {
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  color: var(--ink);
+  font-weight: 600;
+}
+.skill-level {
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  font-weight: 500;
+}
+.level-medior {
+  background: var(--accent);
+  color: var(--white);
+}
+.level-junior {
+  background: var(--accent-pale);
+  color: var(--accent);
+}
+
+/* Languages */
+.lang-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--paper-dark);
+}
+.lang-name { font-size: 0.88rem; font-weight: 400; }
+.lang-level { font-size: 0.75rem; color: var(--ink-faint); }
+
+/* Interests */
+.interests-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.interest-tag {
+  background: var(--paper-dark);
+  border: 1px solid var(--rule);
+  padding: 0.2rem 0.7rem;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+/* ── Main column ───────────────────────────────────── */
+.main {
+  padding: 2.5rem 0 2rem 2.5rem;
+}
+.main-section { margin-bottom: 3rem; }
+.main-section:last-child { margin-bottom: 0; }
+
+.section-heading {
+  font-family: var(--f-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 1.4rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+}
+.section-heading span {
+  font-family: var(--f-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  font-weight: 400;
+}
+
+/* Timeline entries */
+.entry {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 0 1.4rem;
+  margin-bottom: 1.8rem;
+  position: relative;
+}
+.entry:last-child { margin-bottom: 0; }
+.entry-date {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  font-weight: 600;
+  padding-top: 0.15rem;
+  padding-right: 14px;
+  text-align: right;
+  line-height: 1.4;
+}
+.entry-role {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.entry-org {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-lt);
+  margin-bottom: 0.4rem;
+}
+.entry-desc {
+  font-size: 0.84rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.entry-desc ul {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+.entry-desc li {
+  margin-bottom: 0.2rem;
+  color: var(--ink-soft);
+}
+.entry-desc li strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+/* Vertical connector line */
+.timeline { position: relative; }
+.timeline .entry::before {
+  content: '';
+  position: absolute;
+  left: 110px;
+  top: 0.5rem;
+  bottom: -1.8rem;
+  width: 1px;
+  background: var(--rule);
+}
+.timeline .entry:last-child::before { display: none; }
+.timeline .entry::after {
+  content: '';
+  position: absolute;
+  left: 106px;
+  top: 0.45rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--paper);
+  box-shadow: 0 0 0 1px var(--accent);
+}
+
+/* Education entries are more compact */
+.edu .entry { margin-bottom: 1.2rem; }
+.edu .entry::before { bottom: -1.2rem; }
+
+/* ── Print / PDF ───────────────────────────────────── */
+@media print {
+  @page {
+    margin: 0;
+    size: A4 portrait;
+  }
+
+  .export-bar { display: none !important; }
+
+  body {
+    background: white;
+    font-size: 9pt;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .page {
+    margin-top: 0;
+    max-width: 100%;
+    padding: 0.9cm 1.1cm;
+  }
+
+  .hero {
+    padding: 0 0 0.8rem;
+  }
+
+  .hero-name {
+    font-size: 1.9rem !important;
+  }
+
+  /* Switch grid to floats — CSS Grid blocks page-flow causing a blank page 1 */
+  .body-grid {
+    display: block;
+  }
+
+  .sidebar {
+    float: left;
+    width: 170px;
+    padding: 1rem 1rem 1rem 0;
+    border-right: 1px solid var(--rule);
+  }
+
+  .main {
+    margin-left: 185px;
+    padding: 1rem 0 0 0;
+  }
+
+  .sidebar-section { margin-bottom: 1rem; }
+
+  /* Allow content to break naturally — keep individual entries/sections intact */
+  .entry, .sidebar-section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Page 2 starts with Stack (sidebar) and Opleiding (main) */
+  .sidebar-stack,
+  .edu {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  .entry { margin-bottom: 0.8rem; }
+  .edu .entry { margin-bottom: 0.5rem; }
+
+  .main-section { margin-bottom: 1.2rem; }
+
+  a { color: inherit; text-decoration: none; }
+}
+
+/* ── Responsive ────────────────────────────────────── */
+@media (max-width: 680px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-contact { text-align: left; }
+  .body-grid { grid-template-columns: 1fr; }
+  .sidebar { border-right: none; border-bottom: 1px solid var(--rule); padding: 2rem 0; }
+  .main { padding: 2rem 0 0; }
+}

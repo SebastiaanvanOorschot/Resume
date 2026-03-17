@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sebastiaan van Oorschot — Software Ontwikkelaar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       EXPORT BAR
+       ═══════════════════════════════════════════════════════════ -->
+  <div class="export-bar">
+    <button class="btn-export" onclick="window.print()">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/>
+        <line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Exporteer PDF
+    </button>
+  </div>
+
+  <div class="page">
+
+    <!-- ═══════════════════════════════════════════════════════════
+         HEADER
+         ─ Name, title, contact details
+         ═══════════════════════════════════════════════════════════ -->
+    <header class="hero">
+      <div>
+        <h1 class="hero-name">
+          Sebastiaan<em>van Oorschot</em>
+        </h1>
+        <p class="hero-title">// Software Ontwikkelaar · Geboortejaar 1988</p>
+      </div>
+      <address class="hero-contact">
+        <a href="mailto:sebastiaan.van.oorschot@esprit-ict.nl">sebastiaan.van.oorschot@esprit-ict.nl</a>
+        <a href="mailto:sebasvanoorschot@live.nl">sebasvanoorschot@live.nl</a>        
+        <a href="tel:0643436743">+31 6 43 43 67 43</a>
+        <a href="tel:0889382146">088 938 21 46</a>
+        <!-- <a href="https://linkedin.com/in/SebastiaanvanOorschot" target="_blank">LinkedIn</a> -->
+      </address>
+    </header>
+
+    <div class="body-grid">
+
+      <!-- ═══════════════════════════════════════════════════════
+           SIDEBAR
+           ─ About, Stack, Languages, Interests
+           ═══════════════════════════════════════════════════════ -->
+      <aside class="sidebar">
+
+        <!-- About -->
+        <div class="sidebar-section">
+          <div class="sidebar-label">Over mij</div>
+          <p class="about-text">
+            Gepassioneerd software ontwikkelaar, gamer en muziekliefhebber. Creatief met oog voor detail. Houd van een goed probleem.
+          </p>
+        </div>
+
+        <!-- Languages -->
+        <div class="sidebar-section">
+          <div class="sidebar-label">Talen</div>
+          <div class="lang-item">
+            <span class="lang-name">Nederlands</span>
+            <span class="lang-level">Moedertaal</span>
+          </div>
+          <div class="lang-item">
+            <span class="lang-name">Engels</span>
+            <span class="lang-level">Zeer goed</span>
+          </div>
+        </div>
+
+        <!-- Interests -->
+        <div class="sidebar-section">
+          <div class="sidebar-label">Interesses</div>
+          <div class="interests-list">
+            <span class="interest-tag">Programmeren</span>
+            <span class="interest-tag">Koken</span>
+            <span class="interest-tag">Psychologie</span>
+            <span class="interest-tag">Mountainbiken</span>
+            <span class="interest-tag">Simracing</span>
+          </div>
+        </div>
+
+        <!-- Stack
+             Levels: level-junior | level-medior | level-senior -->
+        <div class="sidebar-section sidebar-stack">
+          <div class="sidebar-label">Stack</div>
+
+          <div class="skill-item">
+            <span class="skill-name">HTML · CSS</span>
+            <span class="skill-level level-medior">Medior</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">C# .NET</span>
+            <span class="skill-level level-medior">Medior</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">JavaScript</span>
+            <span class="skill-level level-junior">Junior</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Vue.JS</span>
+            <span class="skill-level level-medior">Medior</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">SQL</span>
+            <span class="skill-level level-medior">Medior</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">PHP</span>
+            <span class="skill-level level-junior">Junior</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Azure</span>
+            <span class="skill-level level-junior">Junior</span>
+          </div>
+          <div class="skill-item">
+            <span class="skill-name">Git</span>
+            <span class="skill-level level-junior">Junior</span>
+          </div>
+
+          <!-- ── ADD NEW SKILL HERE ───────────────────────────
+          <div class="skill-item">
+            <span class="skill-name">Blazor</span>
+            <span class="skill-level level-junior">Junior</span>
+          </div>
+          ──────────────────────────────────────────────────── -->
+        </div>        
+
+      </aside>
+
+      <!-- ═══════════════════════════════════════════════════════
+           MAIN CONTENT
+           ═══════════════════════════════════════════════════════ -->
+      <main class="main">
+
+        <!-- ─────────────────────────────────────────────────────
+             WERKERVARING
+             Each entry = one job. Copy the block below to add one.
+             ───────────────────────────────────────────────────── -->
+        <section class="main-section">
+          <h2 class="section-heading">Werkervaring <span>experience</span></h2>
+          <div class="timeline">
+
+            <!-- Job: Software Ontwikkelaar @ Zetacom / Esprit-ICT -->
+            <div class="entry">
+              <div class="entry-date">2020 — heden</div>
+              <div class="entry-body">
+                <div class="entry-role">Software Ontwikkelaar</div>
+                <div class="entry-org">Zetacom — Esprit-ICT</div>
+                <div class="entry-desc">
+                  Applicaties ontwikkelen en onderhouden in scrum-formaat. Database taken automatiseren en query's schrijven.
+                  <ul>
+                    <li><strong>Nexus</strong> — Vue.JS front-end met C# .NET REST API. Ontwikkelt voor BU UC als CMDB en knooppunt voor verschillende bronnen van data. Hoofdtaak: front-end ontwikkelaar.</li>
+                    <li><strong>Learn &amp; Development portal</strong> — Blazor WebAssembly front-end met .NET REST API. Ontwikkelt als leerportaal voor de medewerkers van Esprit-ICT.</li>
+                    <li><strong>ZetacomApi</strong> — C# .NET REST API. Eerste taak: code coverage verhogen door het testproject uitbreiden.</li>
+                    <li><strong>ZetacomPortal</strong> — Samenbrengen van ZetaDesk (ITSM tool, C# + JS) en een CMDB (Vue.JS).</li>
+                    <li><strong>MijnZetacom</strong> — Klantenportaal in Vue.JS met ZetacomApi als backend.</li>
+                    <li><strong>Migratie- &amp; synctools</strong> — Diverse C# applicaties voor datasynchronisatie en migraties.</li>
+                    <li><strong>Wachtwoord-encryptietool</strong> — Zelf bedacht en gebouwd in C# voor veilig transporteren van wachtwoorden naar klanten.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Job: Servicedeskmedewerker @ Zetacom -->
+            <div class="entry">
+              <div class="entry-date">2013 — 2020</div>
+              <div class="entry-body">
+                <div class="entry-role">Servicedeskmedewerker</div>
+                <div class="entry-org">Zetacom</div>
+                <div class="entry-desc">
+                  Remote technisch support op telefooncentrales en IP-netwerken: configureren, aanpassen en storingen zoeken.
+                </div>
+              </div>
+            </div>
+
+            <!-- Job: Autotechnicus -->
+            <div class="entry">
+              <div class="entry-date">2006 — 2013</div>
+              <div class="entry-body">
+                <div class="entry-role">Autotechnicus</div>
+                <div class="entry-org">Verschillende Bedrijven</div>
+                <div class="entry-desc">
+                  1ste autotechnicus en diagnosetechnicus gespecialiseerd in elektronica. APK keurmeester, werkplaatsmanagement en begeleiding van studenten.
+                </div>
+              </div>
+            </div>
+
+            <!-- ── ADD NEW JOB HERE ────────────────────────────
+            <div class="entry">
+              <div class="entry-date">JAAR — JAAR</div>
+              <div class="entry-body">
+                <div class="entry-role">Functietitel</div>
+                <div class="entry-org">Bedrijfsnaam</div>
+                <div class="entry-desc">Omschrijving van de rol.</div>
+              </div>
+            </div>
+            ──────────────────────────────────────────────────── -->
+
+          </div>
+        </section>
+
+        <!-- ─────────────────────────────────────────────────────
+             OPLEIDING
+             Each entry = one course/degree. Copy block to add one.
+             ───────────────────────────────────────────────────── -->
+        <section class="main-section edu">
+          <h2 class="section-heading">Opleiding <span>education</span></h2>
+          <div class="timeline">
+
+            <div class="entry">
+              <div class="entry-date">2022 — heden</div>
+              <div class="entry-body">
+                <div class="entry-role">Bachelor Informatica</div>
+                <div class="entry-org">Open Universiteit</div>
+                <div class="entry-desc">Vak 1 informatica behaald (5 studiepunten).</div>
+              </div>
+            </div>
+
+            <div class="entry">
+              <div class="entry-date">2020 — 2022</div>
+              <div class="entry-body">
+                <div class="entry-role">Zelfstudie Programmeren</div>
+                <div class="entry-org">Eigen Initiatief</div>
+                <div class="entry-desc">Leren programmeren in C# .NET en SQL.</div>
+              </div>
+            </div>
+
+            <div class="entry">
+              <div class="entry-date">2013 — 2020</div>
+              <div class="entry-body">
+                <div class="entry-role">Trainingen IP-netwerken &amp; Communicatie</div>
+                <div class="entry-org">Zetacom</div>
+                <div class="entry-desc">Verschillende cursussen op gebied van IP-netwerken en communicatietechnologie.</div>
+              </div>
+            </div>
+
+            <div class="entry">
+              <div class="entry-date">2010</div>
+              <div class="entry-body">
+                <div class="entry-role">CAN-BUS Analyse · APK Keurmeester</div>
+                <div class="entry-org">Innovam Groep</div>
+                <div class="entry-desc">Beide certificeringen behaald.</div>
+              </div>
+            </div>
+
+            <div class="entry">
+              <div class="entry-date">2006 — 2010</div>
+              <div class="entry-body">
+                <div class="entry-role">1e &amp; 2e Autotechnicus (MBO)</div>
+                <div class="entry-org">Mondriaan College</div>
+                <div class="entry-desc">Beide diploma's behaald.</div>
+              </div>
+            </div>
+
+            <div class="entry">
+              <div class="entry-date">2001 — 2006</div>
+              <div class="entry-body">
+                <div class="entry-role">VMBO</div>
+                <div class="entry-org">Christelijk College de Populier</div>
+                <div class="entry-desc">Diploma behaald.</div>
+              </div>
+            </div>
+
+            <!-- ── ADD NEW OPLEIDING HERE ──────────────────────
+            <div class="entry">
+              <div class="entry-date">JAAR</div>
+              <div class="entry-body">
+                <div class="entry-role">Naam cursus / opleiding</div>
+                <div class="entry-org">Instituut</div>
+                <div class="entry-desc">Omschrijving of certificering.</div>
+              </div>
+            </div>
+            ──────────────────────────────────────────────────── -->
+
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+</body>
+</html>
