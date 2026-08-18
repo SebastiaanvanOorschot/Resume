@@ -164,7 +164,6 @@ body {
 .skill-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0.3rem 0;
   border-bottom: 1px solid var(--paper-dark);
 }
@@ -173,22 +172,6 @@ body {
   font-size: 0.78rem;
   color: var(--ink);
   font-weight: 600;
-}
-.skill-level {
-  font-size: 0.68rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: 0.15rem 0.5rem;
-  border-radius: 2px;
-  font-weight: 500;
-}
-.level-medior {
-  background: var(--accent);
-  color: var(--white);
-}
-.level-junior {
-  background: var(--accent-pale);
-  color: var(--accent);
 }
 
 /* Languages */
