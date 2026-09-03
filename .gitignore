@@ -4,3 +4,6 @@ Thumbs.db
 
 # Claude
 .claude/
+
+# Secret scan reports
+gitleaks-*.json
